@@ -49,10 +49,15 @@ Example Playbook
 ----------------
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+	
+	- hosts: all
+	  pre_tasks:
+	    - name: Update APT cache
+	      apt: update_cache=yes
+	  roles:
+	    - { role: anorsich.zookeeper }
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+To play with role check out example running in vagrant at /tests/vagrant folder	    
 
 License
 -------
