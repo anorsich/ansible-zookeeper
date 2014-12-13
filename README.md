@@ -11,7 +11,7 @@ Role Variables
 
 Defaults: 
 
-zookeeper_version: "3.4.5+cdh5.0.0+27-0.cdh5b2.p0.29.el6"
+```
 zookeeper_conf_dir: "/etc/zookeeper/conf"
 zookeeper_data_dir: "/var/lib/zookeeper"
 
@@ -37,7 +37,7 @@ zookeeper_id: 0
 
 zookeeper_servers:
   - { zookeeper_id: "0", ip: "127.0.0.1", ports: "2888:3888" }
-
+```
 
 Dependencies
 ------------
