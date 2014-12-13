@@ -1,0 +1,24 @@
+---
+- include: cloudera_cdh5.yml
+
+- name: Zookeeper | Install zookeeper-server apt-get
+  apt: pkg=zookeeper-server state=present
+  tags:
+    - zookeeper
+
+- name: Zookeeper | Update zoo.cfg
+  template: src=zoo.cfg.j2 dest={{ zookeeper_conf_dir }}/zoo.cfg
+  notify:
+    - Restart Zookeeper
+  tags:
+    - zookeeper
+
+- name: Zookeeper | Initialize zookeeper server
+  command: creates=/var/lib/zookeeper/myid service zookeeper-server init --myid={{ zookeeper_id }}
+  tags:
+    - zookeeper
+
+- name:  Zookeeper | Make sure zookeeper-server started
+  service: name=zookeeper-server enabled=yes state=started
+  tags:
+    - zookeeper

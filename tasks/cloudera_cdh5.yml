@@ -1,0 +1,12 @@
+---
+- name: Zookeeper | Configure Cloudera APT key
+  apt_key: url="http://archive.cloudera.com/cdh5/ubuntu/precise/amd64/cdh/archive.key" state=present
+  tags:
+    - zookeeper
+    - cloudera-cdh5
+
+- name: Zookeeper | Configure the Cloudera APT repositories
+  apt_repository: repo="deb [arch=amd64] http://archive.cloudera.com/cdh5/ubuntu/precise/amd64/cdh precise-cdh5 contrib" state=present
+  tags:
+    - zookeeper
+    - cloudera-cdh5

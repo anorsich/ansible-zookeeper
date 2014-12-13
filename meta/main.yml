@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  author: Andrei Orsich
+  description: 
+  company: Paralect
+  license: BSD
+  min_ansible_version: 1.7
+  platforms:
+  - name: Ubuntu
+    versions:
+    - precise
+  categories:
+  - cloud
+  - clustering
+  - database
+dependencies: 
+  - { role: smola.java, java_packages: ["openjdk-6-jdk"] }
