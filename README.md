@@ -3,6 +3,8 @@ Role Name
 
 Install Zookeeper on Ubuntu Precice with Cloudera zookeepr-server package
 
+[![Build Status](https://travis-ci.org/anorsich/ansible-zookeeper.svg)](https://travis-ci.org/anorsich/ansible-zookeeper)
+
 Requirements
 ------------
 
